@@ -9,7 +9,7 @@ SteamCMD 다운로드, 서버 설치, 설정 파일 편집, 실시간 콘솔 로
 
 ## 다운로드
 
-👉 **[최신 버전 다운로드](../../releases/latest)**
+👉 **[최신 버전 다운로드](../../releases/latest)** · [패치노트](CHANGELOG.md)
 
 ## 사용법
 

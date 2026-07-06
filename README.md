@@ -9,7 +9,7 @@ SteamCMD download, server installation, config editing, live console logs — al
 
 ## Download
 
-👉 **[Download the latest release](../../releases/latest)**
+👉 **[Download the latest release](../../releases/latest)** · [Changelog](CHANGELOG.md)
 
 ## Getting Started
 
