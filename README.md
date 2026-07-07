@@ -46,7 +46,7 @@ Starting with v0.3.0, GSM sends **one anonymous ping per day** so development ef
 |---|---|
 | Random anonymous ID, GSM version, OS (windows/linux), panel & browser language, installed game IDs, instance count, per-game start counts | Server names, passwords, settings values, file paths, player data, IP address (the collector derives a country code from the connection and discards the address) |
 
-To disable, run with the `-no-telemetry` flag.
+To disable, toggle it off in the panel's Settings (⚙, top right) or run with the `-no-telemetry` flag.
 
 ## Feedback
 
