@@ -38,6 +38,16 @@ Want another game? File a [game request](../../issues/new/choose).
 - For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab)
 - ⚠️ This version has no authentication — the panel binds to **localhost (127.0.0.1) only**. Do not expose it to the internet.
 
+## Telemetry
+
+Starting with v0.3.0, GSM sends **one anonymous ping per day** so development effort can go where it matters (which games, which languages). Exactly this and nothing more:
+
+| Sent | Not sent — ever |
+|---|---|
+| Random anonymous ID, GSM version, OS (windows/linux), panel & browser language, installed game IDs, instance count, per-game start counts | Server names, passwords, settings values, file paths, player data, IP address (the collector derives a country code from the connection and discards the address) |
+
+To disable, run with the `-no-telemetry` flag.
+
 ## Feedback
 
 Bug reports · game requests · feature ideas → [Issues](../../issues/new/choose)
