@@ -27,13 +27,13 @@ SteamCMD and game server files are downloaded automatically on first install.
 | Project Zomboid | Admin password set automatically on first run |
 | V Rising | |
 | Valheim | Crossplay option supported |
-| Palworld | |
+| Palworld | Installs game files per server (~8GB each) — the game has no custom save-path support |
 
 Want another game? File a [game request](../../issues/new/choose).
 
 ## Requirements & Notes
 
-- Windows 10 or later (64-bit) — Linux support planned
+- Windows 10 or later (64-bit); experimental Linux build available (V Rising has no Linux server)
 - Disk space: roughly 2–20 GB per game server
 - For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab)
 - ⚠️ This version has no authentication — the panel binds to **localhost (127.0.0.1) only**. Do not expose it to the internet.

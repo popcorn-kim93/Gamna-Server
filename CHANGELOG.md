@@ -2,6 +2,26 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.0 — 2026-07-08
+
+### Added / 추가
+- **GSM 자동 업데이트** — 새 버전이 나오면 헤더 버튼에 빨간 점. 클릭 한 번으로 다운로드→교체→재시작 (모든 서버 정지 상태에서만)
+  - **GSM self-update** — a red dot appears on the header button when a new release is out; one click downloads, swaps, and restarts (only while all servers are stopped)
+- **게임 서버 패치 감지** — 스팀에 새 빌드가 올라오면 카드의 업데이트 버튼에 빨간 점. 서버가 정지 상태일 때 눌러서 업데이트
+  - **Game patch detection** — a red dot on the card's Update button when Steam has a new build; click to update while the server is stopped
+- **서버(인스턴스) = 완전히 독립** — 세이브·설정이 서버마다 격리되어, 같은 게임 서버 여러 개(PvE/PvP 등)를 동시에 돌려도 데이터가 섞이지 않음. 기존 데이터는 첫 실행 시 자동 이전
+  - **Each server is now fully independent** — saves & settings are isolated per server, so multiple servers of the same game (PvE/PvP, etc.) can run side by side. Existing data migrates automatically on first run
+- 시작 시 포트 충돌 검사 — 실행 중인 다른 서버와 포트가 겹치면 알려주고 시작을 막음
+  - Port-conflict check on start — starting a server whose ports clash with a running one is blocked with a clear message
+- 삭제 옵션 — 삭제 시 세이브·설정 데이터 삭제, (마지막 서버라면) 게임 파일까지 삭제 선택 가능
+  - Delete options — optionally remove save/settings data and (for the last server of a game) the game files
+- 게임 선택 타일에 설치 용량 안내 — "약 4GB · 서버 여러 개 공유" / "서버마다 약 8GB"
+  - Game tiles now show install size — "~4GB · shared by all servers" / "~8GB per server"
+
+### Note / 참고
+- 팰월드는 게임이 세이브 경로 변경을 지원하지 않아 서버마다 게임 파일을 따로 설치합니다 (서버당 약 8GB)
+  - Palworld installs its files per server (~8GB each) because the game does not support custom save paths
+
 ## v0.3.0 — 2026-07-07
 
 ### Added / 추가
