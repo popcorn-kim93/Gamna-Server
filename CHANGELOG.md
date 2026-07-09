@@ -2,6 +2,22 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.1 — 2026-07-09
+
+### Added / 추가
+- **팰월드 콘솔 (RCON)** — 로그 아래 입력창에서 `Save`, `ShowPlayers` 같은 명령을 보내고 응답을 바로 확인. RCON 활성화·포트·비밀번호는 GSM이 자동으로 관리 (비밀번호가 비어 있으면 안전한 값을 자동 생성)
+  - **Palworld console (RCON)** — send commands like `Save` or `ShowPlayers` from the input box under the log and see the response. GSM enables and manages RCON automatically (a secure password is generated if empty)
+- **팰월드 정상 종료** — 정지 시 월드를 저장한 뒤 안전하게 종료. 기존에는 강제 종료라 마지막 자동저장 이후 진행분이 유실될 수 있었음
+  - **Palworld graceful shutdown** — Stop now saves the world before exiting; previously a force-kill could lose progress since the last autosave
+- 콘솔 미지원 게임(V Rising, Valheim)은 입력창이 비활성화되고 이유가 표시됨 — "명령을 쳤는데 반응이 없는" 혼란 제거
+  - Games without console support (V Rising, Valheim) now show a disabled input with an explanation
+- RCON은 범용 구현 — 이후 RCON을 지원하는 게임은 매니페스트 선언만으로 콘솔·정상 종료가 동작
+  - RCON support is generic — future games get console & graceful stop via a manifest declaration alone
+
+### Note / 참고
+- 팰월드 RCON 포트(기본 25575)는 GSM이 내부(127.0.0.1)에서만 사용합니다. **절대 포트포워딩하지 마세요** — 어드민 비밀번호만으로 서버를 장악할 수 있습니다
+  - The Palworld RCON port (default 25575) is used by GSM locally only. **Never port-forward it** — the admin password alone grants full server control
+
 ## v0.4.0 — 2026-07-08
 
 ### Added / 추가
