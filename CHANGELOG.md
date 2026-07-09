@@ -2,6 +2,20 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.2 — 2026-07-09
+
+### Added / 추가
+- **세부 설정 대폭 확장** — 팰월드 66종(경험치·포획률 배율, 난이도, 사망 페널티, 거점/길드 제한 등), V Rising 32종(난이도, 성 공격 규칙, 배율 등), 발헤임 20종(**월드 모디파이어** — 전투·자원·습격·포탈·프리셋, 건축 무료 등), 좀보이드 16종(서버 목록 공개, 루팅 리스폰 등). 자동 저장 간격도 전 게임 노출
+  - **Greatly expanded settings** — 66 for Palworld (XP/capture rates, difficulty, death penalty, base/guild limits…), 32 for V Rising, 20 for Valheim (**world modifiers** — combat, resources, raids, portals, presets, free building), 16 for Project Zomboid. Autosave interval exposed for every game
+- **설정 화면 개선** — 카테고리 접이식 그룹 + 검색창 + 기본값과 다른 항목 표시(●)·"기본값으로" 되돌리기 + 항목별 도움말·범위 검증(잘못된 값은 저장 시 거부)
+  - **Better settings form** — collapsible categories, search box, "differs from default" markers with one-click reset, per-field help, and range validation on save
+- 서버 카드에 게임 아트가 은은한 배경으로 표시
+  - Server cards now show the game's artwork as a subtle background
+
+### Note / 참고
+- 이번 확장도 게임별 코드 없이 매니페스트(JSON) 선언만으로 구현 — 새 게임 추가 시에도 같은 방식이 적용됩니다
+  - As always, implemented purely via game manifests (JSON) — no per-game code
+
 ## v0.4.1 — 2026-07-09
 
 ### Added / 추가
