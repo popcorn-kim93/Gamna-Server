@@ -2,6 +2,26 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.3 — 2026-07-09
+
+### Added / 추가
+- **모드 지원** — 새 "모드" 탭에서 서버 모드를 웹 패널로 설치·켬/끔·제거
+  - **Mod support** — install, toggle, and remove server mods from the new "Mods" tab
+- **좀보이드 (스팀 워크샵)**: 워크샵 모드 페이지 URL만 붙여넣으면 GSM이 다운로드 후 모드 ID를 자동 추출해 서버 설정에 반영. 접속하는 플레이어는 모드를 자동으로 내려받음
+  - **Project Zomboid (Steam Workshop)**: paste a workshop mod URL — GSM downloads it, extracts the mod IDs automatically, and configures the server. Joining players get the mods automatically
+- **발헤임 · V Rising (Thunderstore/BepInEx)**: Thunderstore 모드 URL을 붙여넣으면 모드 로더(BepInEx)와 필수 선행 모드까지 자동 설치
+  - **Valheim · V Rising (Thunderstore/BepInEx)**: paste a Thunderstore mod URL — the BepInEx mod loader and required dependencies are installed automatically
+- 모드는 서버(인스턴스)별로 격리 — 같은 게임의 모드 서버와 바닐라 서버를 동시에 운영 가능 (게임 파일은 계속 공유, 추가 용량 없음)
+  - Mods are isolated per server — run a modded and a vanilla server of the same game side by side (game files stay shared, no extra disk)
+
+### Note / 참고
+- 모드는 제작자가 배포하는 서드파티 코드입니다 — 신뢰할 수 있는 모드만 설치하세요
+  - Mods are third-party code from their authors — only install mods you trust
+- 발헤임 모드 대부분은 접속하는 플레이어도 같은 모드가 필요하고, 크로스플레이가 켜져 있으면 모드가 동작하지 않습니다
+  - Most Valheim mods must also be installed by joining players, and mods do not work while Crossplay is enabled
+- 리눅스 서버의 모드 로딩(발헤임·V Rising)은 이번 릴리스에서 검증되지 않았습니다 (실험적)
+  - Mod loading on Linux servers (Valheim/V Rising) is not yet verified in this release (experimental)
+
 ## v0.4.2 — 2026-07-09
 
 ### Added / 추가
