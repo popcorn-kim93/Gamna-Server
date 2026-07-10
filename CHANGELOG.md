@@ -2,6 +2,17 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.4 — 2026-07-10
+
+### Fixed / 수정
+- 패널 헤더의 버전 표시가 하드코딩되어 있어, 실제로 어떤 버전을 실행하든 항상 `v0.4.0` 으로 보이던 문제 수정. v0.4.1~v0.4.3 은 표시만 잘못됐을 뿐 정상 동작하고 있었습니다
+  - Fixed the panel header always showing `v0.4.0` — the version label was hardcoded. v0.4.1–v0.4.3 were running correctly; only the label was wrong
+
+### Note / 참고
+- 업데이트 확인과 자가 업데이트는 처음부터 실제 버전을 기준으로 동작했으므로 영향이 없습니다
+  - Update checking and self-update always used the real version and were never affected
+- 기능 변경은 없습니다 / No functional changes
+
 ## v0.4.3 — 2026-07-09
 
 ### Added / 추가
