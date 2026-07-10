@@ -7,6 +7,25 @@ SteamCMD download, server installation, config editing, live console logs — al
 
 > This repository is **for distribution only** (source is managed separately). Grab the executable from [Releases](../../releases).
 
+![Live console and server list](docs/img/en-01-console.png)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/en-04-newgame.png" alt="Pick a game and create a server"></td>
+    <td width="50%"><img src="docs/img/en-02-settings.png" alt="Per-game settings, grouped and searchable"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Pick a game — SteamCMD does the rest</em></td>
+    <td align="center"><em>Every server setting, grouped and searchable</em></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/img/en-03-mods.png" alt="Mod management"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><em>Mods from Steam Workshop and Thunderstore — no manual file copying</em></td>
+  </tr>
+</table>
+
 ## Download
 
 👉 **[Download the latest release](../../releases/latest)** · [Changelog](CHANGELOG.md)

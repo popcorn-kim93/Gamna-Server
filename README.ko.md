@@ -7,6 +7,25 @@ SteamCMD 다운로드, 서버 설치, 설정 파일 편집, 실시간 콘솔 로
 
 > 이 저장소는 **배포 전용**입니다 (소스는 별도 관리). 실행 파일은 [Releases](../../releases)에서 받으세요.
 
+![실시간 콘솔과 서버 목록](docs/img/01-console.png)
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/img/04-newgame.png" alt="게임을 고르고 서버 만들기"></td>
+    <td width="50%"><img src="docs/img/02-settings.png" alt="게임별 세부 설정"></td>
+  </tr>
+  <tr>
+    <td align="center"><em>게임만 고르면 SteamCMD가 알아서 설치합니다</em></td>
+    <td align="center"><em>서버 설정 전부를 분류·검색해서 편집</em></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/img/03-mods.png" alt="모드 관리"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><em>스팀 워크샵·Thunderstore 모드를 파일 복사 없이 설치</em></td>
+  </tr>
+</table>
+
 ## 다운로드
 
 👉 **[최신 버전 다운로드](../../releases/latest)** · [패치노트](CHANGELOG.md)
