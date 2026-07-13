@@ -2,6 +2,20 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.5 — 2026-07-13
+
+### Added / 추가
+- **웹 패널 포트 변경** — 패널 포트(기본 8710)가 게임 서버 포트와 겹쳐 접속이 안 될 때, ⚙ 설정에서 패널 포트를 바꿀 수 있습니다. 저장 후 GSM을 다시 시작하면 적용되며, 재시작 후 접속할 새 주소를 안내합니다
+  - **Change the web panel port** — if the panel port (default 8710) clashes with a game server port, you can now change it in Settings (⚙). It applies after you restart GSM, which then shows you the new address to open
+- 게임 서버 시작 시 그 포트가 패널 포트와 겹치면 시작 전에 알려줍니다 (기존에는 OS 레벨에서 뒤늦게 실패했음)
+  - Starting a game server whose port clashes with the panel port is now caught up front (previously it failed later at the OS level)
+
+### Note / 참고
+- 포트를 바꾸지 않으면 지금까지처럼 8710 그대로입니다 — 설정을 직접 바꿀 때만 반영됩니다
+  - If you don't change it, the panel stays on 8710 exactly as before (opt-in)
+- 인증 기능은 아직 없으므로 패널 포트는 여전히 외부에 공개하지 마세요. 이 기능은 로컬 포트 충돌 해소용입니다
+  - There's still no authentication, so don't expose the panel port to the internet — this is for resolving local port clashes
+
 ## v0.4.4 — 2026-07-10
 
 ### Fixed / 수정
