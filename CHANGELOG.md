@@ -2,6 +2,18 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.2 — 2026-07-14
+
+### Added / 추가
+- **Conan Exiles 추가** (총 11종). PvP/PvE, 최대 인원, 노출 수위, 경험치 배율, RCON 콘솔을 웹 패널에서 설정. 서버마다 게임 파일을 따로 설치(약 6GB). 실설치·실부팅으로 검증(기동·설정 반영·RCON 왕복·포트·정지)
+  - **Added Conan Exiles** (11 total). PvP/PvE, max players, nudity level, XP rate, and the RCON console — all from the web panel. Game files install per server (~6GB). Verified by installing and booting a real server (startup, settings, RCON round-trip, ports, stop)
+
+### Note / 참고
+- Conan 스팀 워크샵 모드는 이번 버전에서 아직 지원하지 않습니다 — 추후 추가 예정
+  - Conan Steam Workshop mods are not supported yet in this release — planned for later
+- Conan은 Windows 전용 데디케이티드 서버만 존재합니다 (리눅스 빌드에서는 숨김)
+  - Conan ships a Windows-only dedicated server (hidden on the Linux build)
+
 ## v0.5.1 — 2026-07-14
 
 ### Added / 추가
