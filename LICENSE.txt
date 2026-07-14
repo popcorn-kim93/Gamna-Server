@@ -1,0 +1,151 @@
+GAMNA SERVER MANAGER (GSM)
+END-USER LICENSE AGREEMENT (EULA)
+
+Copyright (c) 2026 popcorn-kim93. All rights reserved.
+
+Version 1.0 — Last updated: 2026-07-14
+
+IMPORTANT — READ CAREFULLY. This End-User License Agreement ("Agreement")
+is a legal agreement between you (an individual or a single entity, "You")
+and popcorn-kim93 (the "Author") for the Gamna Server Manager software,
+including its executable binaries, manifests, bundled assets, and
+documentation (collectively, the "Software").
+
+By downloading, installing, running, or otherwise using the Software, You
+agree to be bound by the terms of this Agreement. If You do not agree, do
+not download, install, or use the Software.
+
+This Software is FREEWARE. It is NOT open-source software. Source code is
+not distributed and no rights to the source code are granted.
+
+
+1. GRANT OF LICENSE
+
+Subject to Your compliance with this Agreement, the Author grants You a
+personal, non-exclusive, non-transferable, revocable, royalty-free license
+to install and use the Software, at no charge, for the purpose of
+installing, configuring, running, and managing dedicated game servers,
+including:
+
+   (a) personal, private, and non-commercial use; and
+   (b) commercial use, including hosting game servers that You operate for
+       or on behalf of others, whether or not You charge for access to
+       those game servers.
+
+There is no fee for this license. The Software is provided free of charge.
+
+
+2. RESTRICTIONS
+
+Except as expressly permitted in this Agreement or required by applicable
+law that cannot be excluded by agreement, You may NOT:
+
+   (a) Redistribute, resell, rent, lease, sublicense, republish, mirror,
+       re-host, or otherwise make the Software (in whole or in part, and
+       including its binaries) available to any third party. You may
+       freely share a link to the Software's official distribution page;
+       distribution of the Software itself must occur only through that
+       official page.
+
+   (b) Reverse engineer, decompile, disassemble, or otherwise attempt to
+       derive the source code, underlying ideas, or algorithms of the
+       Software, except to the extent this restriction is expressly
+       prohibited by applicable law.
+
+   (c) Modify, adapt, translate, patch, or create derivative works based
+       upon the Software or its binaries, or circumvent, disable, or
+       tamper with any technical measure within the Software.
+
+   (d) Remove, alter, or obscure any copyright, trademark, or other
+       proprietary notices in or on the Software.
+
+   (e) Use the Software's name, branding, or the Author's name to endorse
+       or promote products derived from the Software without prior written
+       permission.
+
+
+3. THIRD-PARTY COMPONENTS
+
+The Software downloads and operates alongside third-party software,
+including Valve's SteamCMD and the dedicated game server software of each
+supported game. Such third-party software is licensed to You by its
+respective owners under their own terms, and is not covered by this
+Agreement. You are responsible for complying with those terms.
+
+
+4. ANONYMOUS TELEMETRY
+
+The Software sends anonymous usage statistics to the Author once per day
+(a "ping") to help improve the Software. Each ping contains only: a random
+installation identifier (not linked to Your identity), the Software
+version, the operating system name, the panel and browser language codes,
+the list of installed game IDs, the number of instances, and a per-game
+count of how many times servers were started. No IP address, server name,
+password, configuration value, file path, or other personal data is sent.
+The receiving server derives an approximate country from the network
+connection but does not store IP addresses.
+
+Telemetry is enabled by default and can be disabled at any time, either by
+starting the Software with the "-no-telemetry" command-line flag or by
+toggling it off in the web panel's Settings. See the README for details.
+
+
+5. OWNERSHIP AND RESERVATION OF RIGHTS
+
+The Software is licensed, not sold. The Author retains all right, title,
+and interest in and to the Software, including all intellectual property
+rights therein. All rights not expressly granted to You in this Agreement
+are reserved by the Author.
+
+
+6. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF
+ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND
+NON-INFRINGEMENT. THE AUTHOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE
+UNINTERRUPTED, ERROR-FREE, SECURE, OR THAT DEFECTS WILL BE CORRECTED. YOU
+ASSUME THE ENTIRE RISK AS TO THE QUALITY, PERFORMANCE, AND RESULTS OF
+USING THE SOFTWARE.
+
+
+7. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+CONSEQUENTIAL, OR EXEMPLARY DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS,
+REVENUE, GOODWILL, OR GAME SERVER DOWNTIME, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR INABILITY TO USE THE SOFTWARE, EVEN IF ADVISED
+OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF THE LEGAL THEORY.
+YOU ARE SOLELY RESPONSIBLE FOR SECURING, BACKING UP, AND OPERATING YOUR
+GAME SERVERS AND THEIR DATA.
+
+
+8. SECURITY NOTICE
+
+The Software's web panel binds to localhost (127.0.0.1) and has no built-in
+authentication. You are responsible for not exposing the panel to untrusted
+networks. Exposing the panel to the public internet without an
+authenticating reverse proxy may allow anyone to take control of Your
+servers. See the README's security section.
+
+
+9. TERMINATION
+
+This Agreement is effective until terminated. It terminates automatically,
+without notice, if You breach any of its terms. Upon termination, You must
+cease all use of the Software and delete all copies in Your possession.
+Sections 5 through 8, and 10, survive termination.
+
+
+10. GENERAL
+
+If any provision of this Agreement is held to be unenforceable, that
+provision shall be enforced to the maximum extent permissible and the
+remaining provisions shall remain in full force and effect. This Agreement
+constitutes the entire agreement between You and the Author regarding the
+Software and supersedes any prior understandings.
+
+This is a summary license drafted for freeware distribution and is not
+legal advice. For questions regarding this Agreement, contact the Author
+through the official distribution page.
