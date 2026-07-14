@@ -65,8 +65,8 @@ Prefer to check the binary first? You can scan it yourself on [VirusTotal](https
 | Abiotic Factor | |
 | Sons of the Forest | Public network-accessibility self-test skipped by default — turn it off in settings once you've port-forwarded a public server |
 | Soulmask | |
-| ARK: Survival Ascended | Map selection, difficulty/rates, RCON console; installs per server (~13GB). CurseForge mods not supported yet |
-| Conan Exiles | PvP/PvE, nudity level, XP rate, RCON console; installs per server (~6GB). Steam Workshop mods not supported yet |
+| ARK: Survival Ascended | Map selection, difficulty/rates, RCON console, CurseForge mods; installs per server (~13GB) |
+| Conan Exiles | PvP/PvE, nudity level, XP rate, RCON console, Steam Workshop mods; installs per server (~6GB) |
 
 The last seven ship **Windows-only** dedicated servers (hidden on the Linux build).
 

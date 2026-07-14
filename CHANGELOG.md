@@ -2,6 +2,16 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.3 — 2026-07-14
+
+### Added / 추가
+- **ARK·Conan 모드 지원.** 웹 패널의 모드 탭에서 관리 — 게임별 코드 없이 매니페스트 선언만으로 동작. 두 게임 모두 실설치·실부팅으로 모드 로드까지 검증
+  - **Mod support for ARK and Conan.** Managed from the Mods tab in the web panel — driven by manifest declarations, no per-game code. Both verified end-to-end on a real server, up to the mod actually loading
+- **ARK (CurseForge):** 모드 페이지의 숫자 Project ID를 입력하면 서버가 부팅 시 CurseForge에서 직접 내려받아 로드. GSM은 ID 목록만 관리하고 `-mods=` 인자로 주입(값이 비면 인자 자체를 생략 — 빈 `-mods=` 크래시 방지)
+  - **ARK (CurseForge):** enter a mod's numeric Project ID; the server downloads it from CurseForge on boot and loads it. GSM manages the ID list and injects `-mods=` (the arg is omitted entirely when empty — prevents the empty-`-mods=` crash)
+- **Conan (Steam Workshop):** 워크샵 URL/ID를 입력하면 SteamCMD로 내려받아 `.pak` 경로를 `ConanSandbox/Mods/modlist.txt`에 기록 → 서버가 자동 로드. 모드 켬/끔 토글 지원
+  - **Conan (Steam Workshop):** enter a Workshop URL/ID; GSM downloads it via SteamCMD and writes the `.pak` paths to `ConanSandbox/Mods/modlist.txt`, which the server auto-loads. Per-mod enable/disable toggle
+
 ## v0.5.2 — 2026-07-14
 
 ### Added / 추가
