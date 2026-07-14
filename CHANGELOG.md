@@ -2,6 +2,12 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.4.6 — 2026-07-14
+
+### Added / 추가
+- **데몬 재시작 시 실행 중인 서버 자동 재인식** — 게임 서버는 GSM이 꺼져도 계속 돌아갑니다. 이제 GSM을 다시 켜면 여전히 실행 중인 서버를 "실행 중" 상태로 다시 인식해, 정지·상태 확인을 바로 할 수 있습니다 (실시간 콘솔 로그는 다음 시작 때부터 다시 표시)
+  - **Auto re-attach to running servers after a restart** — game servers keep running even when GSM is closed. Now, restarting GSM re-recognizes a server that's still running as "running" again, so you can stop and monitor it immediately (the live console log resumes from its next start)
+
 ## v0.4.5 — 2026-07-13
 
 ### Added / 추가
