@@ -7,6 +7,8 @@ SteamCMD download, server installation, config editing, live console logs — al
 
 > This repository is **for distribution only** (source is managed separately). Grab the executable from [Releases](../../releases).
 
+<!-- DEMO GIF: once recorded, replace this comment with e.g. ![GSM demo](docs/img/demo.gif) -->
+
 ![Live console and server list](docs/img/en-01-console.png)
 
 <table>
@@ -26,6 +28,12 @@ SteamCMD download, server installation, config editing, live console logs — al
   </tr>
 </table>
 
+## Why GSM?
+
+- **Actually free — no tiers, no paywall.** Unlike **AMP** (paid per-install license) or a hosted **Pterodactyl** setup, GSM is free for both personal and commercial server hosting.
+- **One executable, zero dependencies.** No Docker, no database, no PHP/Node stack to stand up like **Pterodactyl** requires — download, run, open your browser.
+- **New games are just a JSON file.** Where **WindowsGSM** needs a per-game plugin/script, every game in GSM is one manifest, so behavior stays consistent as games are added.
+
 ## Download
 
 👉 **[Download the latest release](../../releases/latest)** · [Changelog](CHANGELOG.md)
@@ -38,6 +46,11 @@ SteamCMD download, server installation, config editing, live console logs — al
 4. `+ New server instance` → pick a game → Install → Start
 
 SteamCMD and game server files are downloaded automatically on first install.
+
+**First run on Windows:** GSM isn't code-signed, so Windows may show a **"Windows protected your PC"** SmartScreen warning the first time you run `gsm.exe`. Click **More info → Run anyway**.
+
+Prefer to check the binary first? You can scan it yourself on [VirusTotal](https://www.virustotal.com/gui/home/upload).
+<!-- VIRUSTOTAL: paste the VirusTotal report URL for this release's gsm.exe here, e.g. — [VirusTotal report](https://www.virustotal.com/gui/file/<hash>) -->
 
 ## Supported Games
 
@@ -62,7 +75,7 @@ Want another game? File a [game request](../../issues/new/choose).
 - Windows 10 or later (64-bit); experimental Linux build available (V Rising has no Linux server)
 - Disk space: roughly 2–20 GB per game server
 - For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab)
-- ⚠️ This version has no authentication — the panel binds to **localhost (127.0.0.1) only**. Do not expose it to the internet.
+- ⚠️ **No authentication.** The panel binds to **localhost (127.0.0.1) only** and has no login. Never port-forward or otherwise expose the panel port (**8710**) to the internet — anyone who can reach it can take control of every server GSM manages. For remote access, put GSM behind an **authenticating reverse proxy** (e.g. Caddy/nginx with basic-auth or an SSO provider) or reach it over a **VPN**. (The *game* ports players connect to are separate and can be forwarded safely.)
 
 ## Telemetry
 
