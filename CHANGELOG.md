@@ -2,6 +2,18 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.0 — 2026-07-14
+
+### Added / 추가
+- **지원 게임 5종 추가** — Enshrouded, Core Keeper, Abiotic Factor, Sons of the Forest, Soulmask (총 9종). 전부 실제 서버를 띄워 설정 주입·실행 인자·포트·부팅을 검증했습니다
+  - **5 more supported games** — Enshrouded, Core Keeper, Abiotic Factor, Sons of the Forest, Soulmask (9 total). Each was verified by booting a real dedicated server (settings injection, launch args, ports, boot)
+
+### Note / 참고
+- Sons of the Forest는 기본적으로 네트워크 접근성 자가진단을 건너뜁니다 (안 그러면 포트포워딩 전에는 서버가 뜨지 않음). 공개 서버로 포트포워딩까지 했다면 세부 설정에서 끄세요
+  - Sons of the Forest skips its public network-accessibility self-test by default (otherwise the server won't boot until ports are forwarded) — turn it off in the detailed settings once you've port-forwarded
+- 새로 추가된 5종은 Windows 전용 데디케이티드 서버만 존재합니다 (리눅스 빌드에서는 숨김). 리눅스 지원 게임은 그대로 Project Zomboid·Valheim·Palworld입니다
+  - The five new games ship Windows-only dedicated servers (hidden on the Linux build); the Linux-supported set is unchanged (Project Zomboid, Valheim, Palworld)
+
 ## v0.4.6 — 2026-07-14
 
 ### Added / 추가

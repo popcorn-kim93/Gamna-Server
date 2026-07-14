@@ -47,6 +47,13 @@ SteamCMD and game server files are downloaded automatically on first install.
 | V Rising | |
 | Valheim | Crossplay option supported |
 | Palworld | Installs game files per server (~8GB each) — the game has no custom save-path support |
+| Enshrouded | |
+| Core Keeper | |
+| Abiotic Factor | |
+| Sons of the Forest | Public network-accessibility self-test skipped by default — turn it off in settings once you've port-forwarded a public server |
+| Soulmask | |
+
+The last five ship **Windows-only** dedicated servers (hidden on the Linux build).
 
 Want another game? File a [game request](../../issues/new/choose).
 
