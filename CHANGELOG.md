@@ -2,6 +2,18 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.1 — 2026-07-14
+
+### Added / 추가
+- **ARK: Survival Ascended 추가** (총 10종). 맵 선택(The Island 외 7종), 난이도·경험치/채집/테이밍 배율, PvP/PvE, BattlEye, RCON 콘솔·정상 종료(월드 저장)를 웹 패널에서 설정. 서버마다 게임 파일을 따로 설치(약 13GB). 실설치·실부팅으로 검증(완전 기동·인자 주입·RCON 왕복·포트·월드 저장)
+  - **Added ARK: Survival Ascended** (10 total). Map selection (The Island + 7 more), difficulty and XP/harvest/taming multipliers, PvP/PvE, BattlEye, and the RCON console with graceful stop (saves the world) — all from the web panel. Game files install per server (~13GB). Verified by installing and booting a real server (full startup, launch-arg injection, RCON round-trip, ports, world save)
+
+### Note / 참고
+- ARK 모드(CurseForge)는 이번 버전에서 아직 지원하지 않습니다 — 추후 추가 예정
+  - ARK mods (CurseForge) are not supported yet in this release — planned for later
+- ARK는 Windows 전용 데디케이티드 서버만 존재합니다 (리눅스 빌드에서는 숨김)
+  - ARK ships a Windows-only dedicated server (hidden on the Linux build)
+
 ## v0.5.0 — 2026-07-14
 
 ### Added / 추가
