@@ -2,6 +2,18 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.4 — 2026-07-15
+
+### Added / 추가
+- **UPnP 자동 포트포워딩.** ⚙ 설정에서 켜면(기본 꺼짐) 서버 시작 시 게임 포트를 공유기에 자동으로 열고 정지 시 닫습니다 — 수동 포트포워딩이 필요 없어집니다. RCON 포트는 보안을 위해 절대 열지 않습니다. 외부 의존성 없이 표준 라이브러리로 구현(UPnP IGD). 실공유기에서 검증
+  - **Automatic port forwarding (UPnP).** Turn it on in Settings (off by default) and GSM opens the game ports on your router at server start and closes them at stop — no manual port forwarding. The RCON port is never opened, for security. Implemented with the standard library only (UPnP IGD). Verified on a real router
+- **전문용어 도움말 툴팁.** 포트포워딩·UPnP·공개IP·쿼리포트·RCON·CGNAT 같은 용어 옆의 ⓘ 아이콘을 누르면 쉬운 말 설명이 뜹니다 (한/영/일/중)
+  - **Plain-language help tooltips.** Click the ⓘ next to terms like port forwarding, UPnP, public IP, query port, RCON, or CGNAT to see a plain-language explanation (KO/EN/JA/ZH)
+
+### Note / 참고
+- UPnP는 공유기가 UPnP를 지원·활성화한 경우에만 동작하며, 통신사 CGNAT 환경에서는 효과가 없습니다(로그에 안내). 그 외에는 수동 포트포워딩이 필요합니다
+  - UPnP works only if your router supports and has UPnP enabled; it has no effect behind carrier-grade NAT (you'll be warned in the log). Otherwise, manual port forwarding is still needed
+
 ## v0.5.3 — 2026-07-14
 
 ### Added / 추가

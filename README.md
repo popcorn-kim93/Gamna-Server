@@ -76,7 +76,7 @@ Want another game? File a [game request](../../issues/new/choose).
 
 - Windows 10 or later (64-bit); experimental Linux build available (V Rising has no Linux server)
 - Disk space: roughly 2–20 GB per game server
-- For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab)
+- For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab). **Since v0.5.4, enabling UPnP in the ⚙ Settings** opens the game ports on your router automatically at server start (if your router supports and has UPnP enabled; the RCON port is never opened)
 - ⚠️ **No authentication.** The panel binds to **localhost (127.0.0.1) only** and has no login. Never port-forward or otherwise expose the panel port (**8710**) to the internet — anyone who can reach it can take control of every server GSM manages. For remote access, put GSM behind an **authenticating reverse proxy** (e.g. Caddy/nginx with basic-auth or an SSO provider) or reach it over a **VPN**. (The *game* ports players connect to are separate and can be forwarded safely.)
 
 ## Telemetry
