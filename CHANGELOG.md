@@ -2,6 +2,12 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.9 — 2026-07-17
+
+### Fixed / 수정
+- **콘솔 로그의 한글이 깨져 보이던 문제를 고쳤습니다.** 좀보이드에서 `help`를 치면 명령어 설명이 네모와 엉뚱한 글자로 나오던 증상입니다. 윈도우 게임은 콘솔 출력을 UTF-8이 아니라 OS 언어의 코드페이지(한국어 = CP949)로 쓰는 경우가 많은데, GSM이 이를 UTF-8로 읽어 글자가 파괴됐습니다. 이제 로그를 읽는 지점에서 인코딩을 자동으로 판별해 변환합니다 — 게임별 설정 없이 동작하며, 한국어뿐 아니라 일본어·중국어 환경도 함께 해결됩니다. 이미 UTF-8로 출력하는 게임은 전혀 영향받지 않습니다
+  - **Fixed garbled (mojibake) text in the console log.** Typing `help` on a Project Zomboid server showed boxes and random letters instead of the command descriptions. Windows games often print to the console in the OS language's code page (CP949 on Korean Windows) rather than UTF-8, and GSM read it as UTF-8, destroying the characters. GSM now detects and converts the encoding where it reads the log — no per-game configuration, and it covers Japanese and Chinese locales too. Output that is already UTF-8 is left untouched
+
 ## v0.5.8 — 2026-07-17
 
 ### Fixed / 수정
