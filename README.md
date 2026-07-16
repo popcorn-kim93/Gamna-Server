@@ -50,7 +50,7 @@ SteamCMD and game server files are downloaded automatically on first install.
 **First run on Windows:** GSM isn't code-signed, so Windows may show a **"Windows protected your PC"** SmartScreen warning the first time you run `gsm.exe`. Click **More info → Run anyway**.
 
 Prefer to check the binary first? You can scan it yourself on [VirusTotal](https://www.virustotal.com/gui/home/upload).
-<!-- VIRUSTOTAL: paste the VirusTotal report URL for this release's gsm.exe here, e.g. — [VirusTotal report](https://www.virustotal.com/gui/file/<hash>) -->
+See the [VirusTotal report for v0.5.7](https://www.virustotal.com/gui/file/deb9ff9525f3f1684186de68733cf6471e1c1b970b872f2947aa7e50a877abf0): a few engines flag it, but those are heuristic false positives common to unsigned Go binaries — Microsoft Defender and every major engine pass.
 
 ## Supported Games
 
