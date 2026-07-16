@@ -65,10 +65,17 @@ Prefer to check the binary first? You can scan it yourself on [VirusTotal](https
 | Abiotic Factor | |
 | Sons of the Forest | Public network-accessibility self-test skipped by default — turn it off in settings once you've port-forwarded a public server |
 | Soulmask | |
-| ARK: Survival Ascended | Map selection, difficulty/rates, RCON console, CurseForge mods; installs per server (~13GB) |
-| Conan Exiles | PvP/PvE, nudity level, XP rate, RCON console, Steam Workshop mods; installs per server (~6GB) |
+| ARK: Survival Ascended | Map selection, difficulty/rates, RCON console + player kick/ban, CurseForge mods; installs per server (~13GB) |
+| Conan Exiles | PvP/PvE, nudity level, XP rate, RCON console + player kick/ban, Steam Workshop mods; installs per server (~6GB) |
+| Necesse | Top-down co-op survival & sandbox (bundled Java runtime); installs per server |
+| Eco | Ecosystem-simulation co-op survival; offline mode by default; installs per server |
+| Mordhau | Large-scale medieval melee PvP; RCON console + player kick/ban; installs per server (~5GB) |
+| Unturned | Zombie survival; invite via Server Code; managed via in-game admin; installs per server |
+| The Isle | Dinosaur survival (Evrima branch); managed via in-game admin; installs per server |
 
-The last seven ship **Windows-only** dedicated servers (hidden on the Linux build).
+Games with an RCON console (**Palworld, ARK, Mordhau, Conan**) also get a **Players** tab — see who's connected and kick or ban them in one click. Games without a command channel are managed via in-game admin.
+
+Ship **Windows-only** dedicated servers (hidden on the Linux build): V Rising, Enshrouded, Core Keeper, Abiotic Factor, Sons of the Forest, Soulmask, ARK: Survival Ascended, Conan Exiles.
 
 Want another game? File a [game request](../../issues/new/choose).
 
