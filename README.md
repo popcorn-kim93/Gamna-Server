@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/img/logo.png" alt="GSM logo" width="128">
+</p>
+
 # GSM — Gamna Server Manager
 
 **English** | [한국어](README.ko.md)
