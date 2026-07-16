@@ -2,6 +2,46 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.7 — 2026-07-16
+
+### Added / 추가
+- **플레이어 관리 (목록·킥·밴).** RCON 명령 채널이 있는 게임에 "플레이어" 탭이 생겼습니다 — 현재 접속자 목록 + 각 행의 킥/밴 버튼. 게임별 코드 없이 매니페스트의 RCON 명령 선언만으로 동작합니다. 탭이 열려 있을 때 5초마다 자동 갱신, RCON 명령 주입 방어. 지원: Palworld·ARK: Survival Ascended·Mordhau·Conan Exiles (모두 실서버로 검증)
+  - **Player management (list / kick / ban).** A "Players" tab on games with an RCON command channel — the connected-player list plus per-row kick/ban buttons. Driven entirely by manifest RCON declarations, no per-game code. Auto-refreshes every 5s while open, with an RCON injection guard. Supported: Palworld, ARK: Survival Ascended, Mordhau, Conan Exiles (all verified on real servers)
+
+### Changed / 변경
+- 동봉 안내 문서를 영어 `README.txt` 하나로 통일했습니다 (Windows zip에도 포함 — 이전에는 Linux 배포에만 있었습니다)
+  - The bundled guide is now a single English `README.txt` (included in the Windows zip too — previously Linux-only)
+
+### Note / 참고
+- 원격 명령 채널이 없는 게임(Valheim·Enshrouded·Unturned·The Isle 등)은 플레이어 관리 탭이 없으며, 기존처럼 인게임 어드민으로 관리합니다
+  - Games without a remote command channel (Valheim, Enshrouded, Unturned, The Isle, etc.) have no Players tab and are managed via in-game admin, as before
+
+## v0.5.6 — 2026-07-15
+
+### Added / 추가
+- **게임 3종 추가 (총 16종): Mordhau · Unturned · The Isle.** 세 게임 모두 실설치·실부팅으로 설정 주입·인자·포트·정상종료를 검증
+  - **3 more games (16 total): Mordhau, Unturned, The Isle.** All three verified with real installs and boots (config injection, launch args, ports, shutdown)
+- **Mordhau** — 중세 대규모 PvP 검술, RCON 콘솔 지원 / Large-scale medieval melee PvP, RCON console
+- **Unturned** — 좀비 서바이벌, 서버 코드로 친구 초대(공개 목록은 GSLT 필요) / Zombie survival; invite via Server Code (public listing needs a GSLT)
+- **The Isle (Evrima)** — 공룡 서바이벌, 전용 `evrima` 브랜치로 자동 설치 / Dinosaur survival; installed from the dedicated `evrima` branch
+
+### Engine / 엔진
+- 신규 `commands-dat` 설정 파서 (Unturned Commands.dat) / New `commands-dat` config parser (Unturned)
+- 매니페스트 `install.branch` 필드 (스팀 베타 브랜치 설치 — The Isle `evrima`) / New `install.branch` manifest field (Steam beta-branch installs)
+
+## v0.5.5 — 2026-07-15
+
+### Added / 추가
+- **게임 2종 추가 (총 13종): Necesse · Eco.** 실설치·실부팅으로 검증
+  - **2 more games (13 total): Necesse, Eco.** Verified with real installs and boots
+- **Necesse** — 탑다운 협동 서바이벌/샌드박스 / Top-down co-op survival & sandbox
+- **Eco** — 생태계 시뮬레이션 협동 서바이벌 (기본 오프라인 모드) / Ecosystem-simulation co-op survival (offline by default)
+- **앱 아이콘.** exe 아이콘 + 브라우저 파비콘 / **App icon.** exe icon + browser favicon
+
+### Engine / 엔진
+- launchArgFlag/launchArgOpt가 매니페스트 기본값을 반영 (예: Eco `-offline` 자동 부착) / launchArgFlag/launchArgOpt now honor manifest defaults (e.g. Eco auto-adds `-offline`)
+- RCON 저장 후 강제 종료 옵션 — 즉시-종료 명령이 없는 게임용(Eco) / RCON save-then-force-stop for games without an immediate shutdown command (Eco)
+
 ## v0.5.4 — 2026-07-15
 
 ### Added / 추가
