@@ -2,6 +2,22 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.8 — 2026-07-17
+
+### Fixed / 수정
+- **[치명] 새로 설치한 GSM에서 첫 게임 설치가 항상 실패하던 문제를 고쳤습니다** (`install failed ... (Missing configuration)`). 릴리스를 새로 받은 사용자는 예외 없이 이 경로를 타므로 사실상 신규 사용자 전원이 설치 불가였습니다. 원인은 두 가지가 겹친 것입니다: ① 갓 받은 SteamCMD가 자가 업데이트를 `+app_update` 뒤에 시작해 첫 시도가 실패하고, ② 재시도 여부를 영어 로그로 판단했는데 SteamCMD 출력은 OS 언어로 번역되어(한국어 윈도우: "업데이트 확인 중...") 감지에 실패해 재시도 없이 그대로 끝났습니다. 이제 SteamCMD를 새로 받으면 워밍업을 1회 돌리고, 성공 신호가 없으면 언어와 무관하게 최대 3회까지 재시도합니다. v0.5.7에서 아무것도 설치되지 않았다면 이 버전이 해결합니다
+  - **[Critical] Fixed the first game install always failing on a fresh GSM install** (`install failed ... (Missing configuration)`). Every user who downloaded a release hit this, so first-time installs were effectively broken. Two causes overlapped: (1) a freshly downloaded SteamCMD starts its self-update *after* `+app_update`, so the first attempt fails, and (2) the retry was gated on English log strings, but SteamCMD translates its output to the OS language (Korean Windows: "업데이트 확인 중..."), so the retry never triggered. GSM now warms SteamCMD up once after downloading it and retries up to 3 times regardless of language. If v0.5.7 could not install anything for you, this release fixes it
+- 인스턴스 삭제(X) 버튼의 가운데를 눌러도 반응하지 않던 문제를 고쳤습니다 (서버 이름 영역이 버튼 위를 덮고 있어 가장자리에서만 눌렸습니다). 버튼도 조금 키웠습니다
+  - Fixed the instance delete (X) button not responding in its center — the server-name area overlapped the button, so only the edges were clickable. The button is slightly larger now
+- 리눅스 배포판의 `manifests` 폴더 권한이 잘못 설정돼 있던 문제를 고쳤습니다 (`drw-r--r--` → `drwxr-xr-x`)
+  - Fixed wrong permissions on the `manifests` folder in the Linux archive (`drw-r--r--` → `drwxr-xr-x`)
+
+### Added / 추가
+- **설치 중단.** 설치 중인 서버 카드에 중단 버튼이 생겼습니다. 이미 받은 데이터는 지우지 않으므로, 다시 설치를 누르면 받던 지점부터 이어받습니다
+  - **Cancel install.** A cancel button on cards while a server is installing. Downloaded data is kept, so pressing Install again resumes where it left off
+- **패널 자동 열기.** 실행하면 기본 브라우저로 패널이 자동으로 열립니다 (이전에는 콘솔 창만 뜨고 주소를 직접 입력해야 했습니다). `-no-browser` 플래그로 끕니다
+  - **The panel opens automatically.** Running GSM now opens the web panel in your default browser (previously only a console window appeared and you had to type the address). Disable with `-no-browser`
+
 ## v0.5.7 — 2026-07-16
 
 ### Added / 추가
