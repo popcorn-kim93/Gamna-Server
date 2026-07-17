@@ -2,6 +2,20 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.10 — 2026-07-17
+
+### Fixed / 수정
+- **[치명] 설정 저장 버튼이 동작하지 않던 문제를 고쳤습니다.** 설정 탭에서 값을 바꾸고 "설정 저장"을 눌러도 **아무것도 저장되지 않았습니다** — 버튼에 클릭 핸들러가 연결돼 있지 않았습니다. 저장 후 폼을 다시 불러오지 않는 탓에 화면에는 바꾼 값이 그대로 남아 성공한 것처럼 보였고, 새로고침해야 원래 값으로 돌아가는 게 드러났습니다. **모든 게임의 모든 설정이 영향을 받았습니다.** (모드 추가, 설정 파일 직접 편집 등 다른 경로는 정상이었습니다)
+  - **[Critical] Fixed the "Save settings" button doing nothing.** Changing a value on the Settings tab and clicking Save **saved nothing** — the button had no click handler. Because the form is not reloaded after saving, the value stayed on screen and it looked like it had worked; only a page refresh revealed that nothing was stored. **This affected every game and every setting.** (Other paths — adding mods, editing config files directly — were unaffected)
+- **서버 종료 중 강제 종료로 세이브가 손상될 수 있던 문제를 고쳤습니다.** 정상 종료 명령을 보낸 뒤 대기 시간이 너무 짧아, 월드를 저장하는 중인데도 GSM이 서버를 강제로 죽였습니다. 실제로 좀보이드에서 세이브(차량 데이터)가 손상됐습니다. 저장에 시간이 걸리는 게임의 대기 시간을 늘렸습니다 (좀보이드·ARK 5분, Necesse 3분, 팰월드 2분)
+  - **Fixed saves being corrupted by a force-kill during shutdown.** The grace period after the graceful-stop command was too short, so GSM force-killed servers that were still saving the world — this actually corrupted a Project Zomboid save (vehicle data). Games that save on exit now get a longer grace period (Project Zomboid & ARK 5 min, Necesse 3 min, Palworld 2 min)
+
+### Added / 추가
+- **설정 탭에 "변경 취소" 버튼과 "저장하지 않은 변경" 표시.** 편집하던 값을 서버에 저장된 값으로 되돌립니다. 기존의 옵션별 "기본값으로"와는 다릅니다 — 그건 게임 기본값으로, 이건 저장된 값으로 되돌립니다
+  - **"Discard changes" button and an unsaved-changes indicator on the Settings tab.** Reloads the values saved on the server. Different from the per-option "revert to default": that one restores the game's default, this one restores what you saved
+- **플레이어 관리에 Project Zomboid 지원.** 접속자 목록·킥·밴을 패널에서 할 수 있습니다. RCON이 없는 게임 중 처음입니다 — stdin 콘솔로 명령을 보내고 로그에서 응답을 읽는 방식을 새로 만들었습니다
+  - **Player management now supports Project Zomboid.** List, kick and ban from the panel. It is the first game without RCON to get this — commands go through the stdin console and the response is read back from the log
+
 ## v0.5.9 — 2026-07-17
 
 ### Fixed / 수정
