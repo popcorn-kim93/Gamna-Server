@@ -2,6 +2,24 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.11 — 2026-07-21
+
+### Added / 추가
+- **웹 패널 인증 (비밀번호 + 세션 로그인).** ⚙ 설정에서 단일 비밀번호를 걸 수 있습니다. 기본은 꺼짐 — 켜면 패널 접근에 로그인이 필요합니다. 비밀번호는 해시로만 저장하고(평문 없음), 세션은 메모리에만 둡니다(재시작 시 재로그인).
+  - **Web panel authentication (password + session login).** Set a single password in ⚙ Settings. Off by default — turn it on to require login. The password is stored only as a hash (never plain text) and sessions live in memory only (re-login after a restart).
+- **HTTPS + 외부 접속 허용.** ⚙ 설정에서 외부(LAN·인터넷) 접속을 열 수 있고, 실인증서(cert·key) 경로를 넣으면 HTTPS로 서빙합니다. 외부 개방은 **비밀번호를 켜야만** 가능합니다(인증 없는 외부 노출 방지). 자체서명 인증서 자동생성은 하지 않습니다.
+  - **HTTPS + external access.** Open the panel to your LAN/the internet from ⚙ Settings, and serve over HTTPS by pointing it at a real certificate (cert·key). External access can only be enabled **once a password is set** (no unauthenticated exposure). No self-signed auto-generation.
+- **플레이어 밴 해제.** 플레이어 관리에서 밴을 해제할 수 있습니다 (Project Zomboid·Palworld·ARK: Survival Ascended·Conan Exiles·Mordhau). 밴 대상은 보통 오프라인이라 식별자를 직접 입력하며, 게임마다 필요한 식별자(이름·SteamID 등)를 안내합니다.
+  - **Unban.** Lift bans from player management (Project Zomboid, Palworld, ARK: Survival Ascended, Conan Exiles, Mordhau). Banned players are usually offline, so you type the identifier; the panel tells you which kind each game needs (name, SteamID, …).
+- **패널을 재시작해도 게임 서버가 유지됩니다 (자동 재접속).** GSM을 업데이트·재시작해도 플레이어가 떨어지지 않고, GSM이 다시 뜨면 실행 중인 서버에 자동으로 다시 붙습니다. 콘솔 창을 X로 닫거나 Ctrl+C를 눌러도, GSM이 크래시해도 서버는 살아남습니다. 완전히 정지하려면 패널에서 각 서버를 정지하세요.
+  - **Game servers survive a panel restart (auto re-attach).** Updating or restarting GSM no longer drops players; when GSM comes back it re-attaches to the running servers. Servers also survive closing the console window (X), Ctrl+C, and a GSM crash. To fully stop a server, stop it from the panel.
+
+### Fixed / 수정
+- **[치명] 인스턴스 상태 파일이 손상돼 GSM이 시작 직후 종료되던 문제를 고쳤습니다(크래시 루프).** 종료 시점에 따라 인스턴스 상태 JSON이 0바이트로 잘릴 수 있었고, 그러면 다음 실행부터 데몬이 즉시 종료됐습니다. 이제 상태 파일을 원자적으로 저장하고, 파일 하나가 손상돼도 그 인스턴스만 건너뛰고 정상 기동합니다(손상 파일은 지우지 않아 수동 복구 가능).
+  - **[Critical] Fixed GSM quitting immediately at startup after an instance state file was corrupted (crash loop).** Depending on timing, an instance state JSON could be truncated to 0 bytes, which then killed the daemon on every launch. State files are now written atomically, and one corrupt file is skipped instead of taking the whole daemon down (the file is kept for manual recovery).
+- 서버가 시작 직후 곧바로 종료되는 경우 PID가 저장되지 않아 재접속에 실패하던 문제를 고쳤습니다.
+  - Fixed re-attach failing for a server that stopped right after starting, because its PID had not been saved.
+
 ## v0.5.10 — 2026-07-17
 
 ### Fixed / 수정
