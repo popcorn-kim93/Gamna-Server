@@ -2,6 +2,22 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.13 — 2026-07-25
+
+### Fixed / 수정
+- **비밀번호(패널 로그인)를 켠 상태에서 자가 업데이트를 하면, 업데이트 후 옛 화면에 멈춰 새로고침이 안 되던 문제를 고쳤습니다.** GSM 세션은 재시작 시 초기화되므로(비밀번호를 디스크에 안 남기려는 설계), 자가 업데이트가 데몬을 재시작하면 패널이 상태를 확인하려고 보내는 요청이 "로그인 필요"로 막혔고, 그 오류를 조용히 삼켜 자동 새로고침이 영원히 일어나지 않았습니다. 이제 인증 여부와 상관없이 새 데몬이 뜨는 것을 감지해 자동으로 새로고침합니다 (비밀번호를 켰다면 새로고침 후 로그인 화면이 뜹니다 — 정상입니다).
+  - **Fixed the panel getting stuck on the old screen after a self-update when a panel password is enabled.** GSM sessions are cleared on restart (by design, so the password never touches disk), so when the self-update restarted the daemon, the panel's status polling was rejected as "login required" and that error was swallowed — the auto-refresh never fired. The panel now detects the new daemon coming back up regardless of authentication and reloads automatically (with a password set, you'll land on the login screen after the reload — that's expected).
+- **⚙ 설정에서 비밀번호·포트를 입력하고 Enter를 눌러도 저장되지 않던 문제를 고쳤습니다.** 각 입력칸에서 Enter가 해당 항목의 저장 버튼을 누르도록 했습니다. (설정창은 항목마다 옆의 버튼으로 따로 저장합니다 — 아래 "닫기"는 저장이 아닙니다.)
+  - **Fixed pressing Enter in the ⚙ Settings password/port fields not saving.** Enter in each field now triggers that item's save button. (Each item in Settings is saved individually with its own button — the "Close" button at the bottom does not save.)
+- 빈 비밀번호로 [비밀번호 설정]을 누르면 아무 일도 안 일어나는데 "설정되었습니다"라고 표시되던 문제를 고쳤습니다.
+  - Fixed clicking "Set password" with an empty field showing "password set" even though nothing happened.
+
+### Changed / 변경
+- **웹 패널이 반응형이 되었습니다 — 폰·태블릿에서도 제대로 보입니다.** 좁은 화면에서는 서버 목록이 햄버거(☰) 버튼으로 여는 서랍으로 바뀌고(서버를 고르면 자동으로 닫힘), 헤더·탭·모달이 화면에 맞게 줄어듭니다. 외부 접속을 켜서 폰으로 관리할 때 유용합니다.
+  - **The web panel is now responsive — it works properly on phones and tablets.** On narrow screens the server list becomes a drawer opened with a hamburger (☰) button (and closes automatically when you pick a server), and the header, tabs and dialogs shrink to fit. Handy when you've enabled remote access and manage from a phone.
+- **⚙ 설정을 닫을 때, 저장하지 않은 입력이 남아 있으면 확인합니다.** 체크박스(자동 포트포워딩 등)를 누르면 이제 "저장됨 ✓" 또는 실패 사유가 표시되고, 저장에 실패하면 체크 상태가 원래대로 되돌아갑니다.
+  - **Closing ⚙ Settings now warns if you have unsaved input.** Checkboxes (auto port forwarding, etc.) now show "Saved ✓" or the failure reason, and a failed save reverts the checkbox.
+
 ## v0.5.12 — 2026-07-24
 
 ### Fixed / 수정
