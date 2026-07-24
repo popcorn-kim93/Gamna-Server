@@ -2,6 +2,26 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.12 — 2026-07-24
+
+### Fixed / 수정
+- **[치명] 서버를 처음 켜기 전에 추가한 모드·설정이 반영되지 않던 문제를 고쳤습니다.** "설치 → 모드 추가 → 시작" 순서로 하면 모드가 하나도 적용되지 않은 채 서버가 떴습니다. 좀보이드는 설정 파일을 **게임이 첫 실행 때 만들기 때문에**, 그 전에 추가한 모드는 저장해둘 파일이 없어 기록에만 남았고, 첫 실행이 설정 파일을 기본값으로 새로 만들면서 모드가 통째로 빠졌습니다. 그 뒤로는 시작·정지를 반복해도 반영되지 않아 설정을 수동으로 다시 저장하는 것 말고는 방법이 없었습니다. 이제 첫 실행이 끝나면 그 전에 저장해둔 값을 **서버가 정지할 때 자동으로 설정 파일에 써넣습니다** (설치 → 모드 추가 → 시작 → 정지 → 시작이면 적용).
+  - **[Critical] Fixed mods and settings saved before a server's first launch never being applied.** Following the natural order — install, add mods, start — the server came up with none of the mods. Project Zomboid's config file is **created by the game on its first run**, so mods added before that had no file to be written to and only lived in GSM's records; the first run then created the config from defaults, silently dropping every mod. No amount of restarting fixed it — only manually re-saving the settings did. Now, once the first run completes, the previously saved values are **written to the config automatically when the server stops** (install → add mods → start → stop → start applies them).
+- **[치명] 월드/설정 이름을 바꾸면 세이브가 사라진 것처럼 보이던 문제를 고쳤습니다.** 좀보이드는 그 이름으로 **월드 폴더·플레이어 데이터베이스·설정 파일**이 모두 정해집니다. 이름만 바꾸면 게임이 새 이름으로 빈 월드를 새로 만들었고, 지금까지 플레이하던 월드와 플레이어 계정·밴 기록은 옛 이름에 남아 방치됐습니다. 이제 이름을 바꾸면 딸린 데이터를 **새 이름으로 함께 옮깁니다.** 안전을 위해 서버가 실행 중이거나 새 이름에 이미 데이터가 있으면 거부하고, 옮기는 도중 실패하면 원래대로 되돌립니다.
+  - **[Critical] Fixed renaming the world/config name making saves look lost.** In Project Zomboid that name determines the **world folder, the player database and the config files**. Renaming it made the game start a brand-new empty world, leaving the world you had been playing — along with player accounts and bans — orphaned under the old name. Renaming now **moves the associated data to the new name.** For safety it is refused while the server is running or when data already exists under the new name, and a failure mid-move is rolled back.
+- 설정을 저장한 뒤 "고급: 설정 파일 직접 편집"의 파일 목록이 갱신되지 않아, 이름을 바꾼 경우 옛 파일을 계속 가리키던 문제를 고쳤습니다 (새로고침해야 반영됐습니다).
+  - Fixed the file list under "Advanced: edit config files" not refreshing after saving settings, so it kept pointing at the old file after a rename (a page refresh was needed).
+
+### Changed / 변경
+- **콘솔이 뒤집혔습니다 — 입력창이 위로, 최신 로그도 위로.** 명령을 치면 결과가 입력창 바로 아래에 나옵니다. 과거 로그를 보려고 아래로 스크롤하면 새 로그가 화면을 밀지 않고, 우상단에 **"↑ 최신 로그로"** 버튼이 나타납니다. 맨 위로 돌아가면 다시 자동으로 최신 로그를 따라갑니다.
+  - **The console is flipped — the input box is on top, and so is the newest log line.** Type a command and its output appears right under the input. Scroll down to read older lines and new output no longer shoves the view around; an **"↑ Jump to latest"** button appears at the top right. Return to the top and it resumes following automatically.
+- **좀보이드의 자동 포트포워딩(UPnP)을 GSM 설정에서 관리합니다.** 좀보이드는 원래 스스로 공유기 포트를 열어서, GSM의 자동 포트포워딩과 같은 포트를 둘이 여는 상태였습니다 (게임이 연 매핑은 서버를 정지해도 공유기에 남습니다). 이제 ⚙ 설정의 자동 포트포워딩을 켜면 GSM이 전담하고, 끄면 게임 기본 동작으로 돌아갑니다 — 조작 지점이 한 곳으로 모입니다.
+  - **Project Zomboid's built-in UPnP is now managed from GSM's settings.** Zomboid opens router ports by itself, so it and GSM's auto port forwarding were both mapping the same ports (and the game's mappings stay on the router even after the server stops). Turning auto port forwarding on in ⚙ Settings now hands it to GSM; turning it off restores the game's own behaviour — one place to control it.
+
+### Added / 추가
+- **비밀번호 표시 버튼.** 접속 비밀번호·어드민 비밀번호 칸의 눈 아이콘을 누르면 값을 확인할 수 있습니다 (다시 누르면 가려집니다).
+  - **Show-password button.** Click the eye icon on the join/admin password fields to reveal the value (click again to hide).
+
 ## v0.5.11 — 2026-07-21
 
 ### Added / 추가
