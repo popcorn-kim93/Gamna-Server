@@ -2,6 +2,38 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.16 — 2026-07-26
+
+### Added / 추가
+- **접속 인원수 표시.** 팰월드·ARK·Conan·Mordhau 서버 카드에 현재 접속 인원(예: 3/16)이 30초마다 갱신되어 표시됩니다. (RCON으로 조회 가능한 게임만 — 좀보이드는 콘솔 로그가 지저분해져 제외했습니다.)
+  - **Live player count on cards.** Palworld, ARK, Conan Exiles and Mordhau server cards now show the current player count (e.g. 3/16), refreshed every 30 seconds. (RCON-queryable games only — Project Zomboid is excluded to keep its console log clean.)
+- **어드민(SteamID) 지정 — 원격 관리 채널이 없는 게임.** GSM에서 원격 킥/밴이 안 되는 게임도 설정 → "고급: 설정 파일 직접 편집"에서 어드민 SteamID 목록을 편집할 수 있습니다. 추가된 게임: **V Rising, Valheim, Core Keeper, Abiotic Factor.** 저장 후 서버를 재시작하면 적용됩니다.
+  - **Set server admins (SteamID) for games without a remote console.** For games GSM can't kick/ban remotely, you can now edit the admin SteamID list under Settings → "Advanced: edit config files directly". Added for **V Rising, Valheim, Core Keeper, Abiotic Factor.** Restart the server to apply.
+
+### Fixed / 수정
+- **비밀번호를 켠 상태에서 자가 업데이트 후 자동 새로고침이 안 되던 문제를 (다시) 고쳤습니다.** 이제 새 데몬이 뜨는 것을 인증 여부와 무관하게 확실히 감지해 새로고침합니다. (참고: 이 수정은 *다음* 업데이트부터 효과가 납니다 — v0.5.16으로 올리는 순간은 옛 버전 패널이 처리하기 때문입니다.)
+  - **Fixed (again) auto-refresh after a self-update failing with a panel password set.** The panel now reliably detects the new daemon coming up regardless of authentication and reloads. (This fix takes effect from your *next* update onward, since the update *into* v0.5.16 is handled by the old panel.)
+- **발헤임 접속 비밀번호를 설정하지 않으면 실제 비밀번호가 `{password}` 리터럴이 되어 접속이 막히던 버그를 고쳤습니다.** 기본 비밀번호가 `00000`으로 지정되며, 원하는 값으로 바꿀 수 있습니다.
+  - **Fixed an unset Valheim join password becoming a literal `{password}`, blocking connections.** The default is now `00000`; change it to whatever you like.
+
+## v0.5.15 — 2026-07-25
+
+### Changed / 변경
+- **좀보이드 정지가 즉시 끝납니다.** 예전엔 저장·종료가 몇 초 만에 끝났는데도 패널이 최대 5분을 "종료중"에 머물렀습니다 (`StartServer64.bat`이 `PAUSE`로 끝나 서버가 죽은 뒤에도 창이 남아, GSM이 이를 "아직 살아있음"으로 오인했습니다). 이제 실제 게임 프로세스의 종료를 감지해 남은 창을 즉시 정리합니다.
+  - **Project Zomboid now stops right away.** Stopping used to leave the panel on "Stopping" for up to 5 minutes even though the world had saved and the server had exited within seconds (`StartServer64.bat` ends with `PAUSE`, so the window lingered and GSM mistook it for a still-running server). GSM now watches the real game process and reaps the leftover window immediately.
+
+### Added / 추가
+- **시작 실패가 이제 보입니다.** 서버가 기동 중 오류로 죽으면(예: 설정 파일 문법 오류) 예전엔 "시작 중"에서 영원히 멈췄습니다. 이제 빨간 **"시작 실패"** 배지와 함께 원인(로그 줄)이 표시되고, 곧바로 다시 시작하거나 삭제할 수 있습니다. 마커 없이 조용히 멈추는 경우도 시작 타임아웃이 잡아냅니다. (현재는 좀보이드에 적용 — 다른 게임은 순차 확대 예정.)
+  - **Start failures are now visible.** If a server dies during startup (e.g. a config-file syntax error), the panel used to hang on "Starting" forever. It now shows a red **"Start failed"** badge with the cause, and you can restart or delete it right away. A startup timeout also catches servers that die silently. (Currently applied to Project Zomboid — more games to follow.)
+
+## v0.5.14 — 2026-07-25
+
+### Added / 추가
+- **서버 재시작 버튼.** 설정을 바꾼 뒤 정지 → 대기 → 시작을 손으로 하던 것을 버튼 하나로 묶었습니다. 실행 중인 서버 카드의 **재시작** 버튼이 정지 → 설정 반영 → 시작을 알아서 처리합니다. 정지가 **설정을 config 파일에 완전히 기록한 뒤에야** 다시 켜지므로 대기 중이던 변경이 유실될 수 없습니다.
+  - **Server restart button.** The stop → wait → start dance for applying changed settings is now one click. The **Restart** button on a running server's card does stop → apply settings → start for you. The restart only brings the server back **after** the shutdown has fully written your settings to the config files, so pending changes can't be lost.
+- **좁은 화면에서 지금 보는 서버가 한눈에.** 폰·태블릿처럼 좁은 화면에서 서버 목록이 햄버거(☰) 서랍으로 숨을 때, 상단에 **서버 이름 · 게임 · 접속 포트 · 현재 상태**가 한 줄로 표시됩니다(상태 배지는 실시간 갱신). 넓은 화면에서는 사이드바가 이미 보여주므로 나타나지 않습니다.
+  - **See the current server at a glance on narrow screens.** When the server list collapses into a hamburger (☰) drawer on phones/tablets, a one-line bar at the top shows the **server name · game · join port · current status** (the badge updates live). It doesn't appear on wide screens, where the sidebar already shows this.
+
 ## v0.5.13 — 2026-07-25
 
 ### Fixed / 수정

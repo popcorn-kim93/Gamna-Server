@@ -77,7 +77,7 @@ See the [VirusTotal report for v0.5.7](https://www.virustotal.com/gui/file/deb9f
 | Unturned | Zombie survival; invite via Server Code; managed via in-game admin; installs per server |
 | The Isle | Dinosaur survival (Evrima branch); managed via in-game admin; installs per server |
 
-Games with an RCON console (**Palworld, ARK, Mordhau, Conan**) also get a **Players** tab — see who's connected and kick or ban them in one click. Games without a command channel are managed via in-game admin.
+Games managed over a console or RCON (**Project Zomboid, Palworld, ARK, Conan, Mordhau**) get a **Players** tab — see who's connected and kick, ban or unban them in one click. The RCON ones (Palworld, ARK, Conan, Mordhau) also show a **live player count** (e.g. 3/16) on their server card. Games without a remote command channel are managed by **designating admins (SteamID) from the panel** or in-game (for V Rising, Valheim, Core Keeper and Abiotic Factor, edit the admin list under Settings → Advanced: edit config files directly).
 
 Ship **Windows-only** dedicated servers (hidden on the Linux build): V Rising, Enshrouded, Core Keeper, Abiotic Factor, Sons of the Forest, Soulmask, ARK: Survival Ascended, Conan Exiles.
 
@@ -88,7 +88,7 @@ Want another game? File a [game request](../../issues/new/choose).
 - Windows 10 or later (64-bit); experimental Linux build available (V Rising has no Linux server)
 - Disk space: roughly 2–20 GB per game server
 - For friends to join from outside, you need to port-forward on your router (per-game ports are shown in the panel's Settings tab). **Since v0.5.4, enabling UPnP in the ⚙ Settings** opens the game ports on your router automatically at server start (if your router supports and has UPnP enabled; the RCON port is never opened)
-- ⚠️ **No authentication.** The panel binds to **localhost (127.0.0.1) only** and has no login. Never port-forward or otherwise expose the panel port (**8710**) to the internet — anyone who can reach it can take control of every server GSM manages. For remote access, put GSM behind an **authenticating reverse proxy** (e.g. Caddy/nginx with basic-auth or an SSO provider) or reach it over a **VPN**. (The *game* ports players connect to are separate and can be forwarded safely.)
+- 🔒 **Authentication is off by default (opt-in).** Out of the box there is no login and the panel binds to **localhost (127.0.0.1) only**. In that state, never port-forward or expose the panel port (**8710**) to the internet — anyone who can reach it can take control of every server GSM manages. For remote management, **set a password** in ⚙ Settings; enabling one lets you opt into **external access** and **HTTPS** (your own real cert·key), and non-local binding is blocked unless authentication is on. (Putting GSM behind an authenticating reverse proxy (Caddy/nginx with basic-auth or SSO) or a **VPN** also still works.) The *game* ports players connect to are separate and can be forwarded safely.
 
 ## Telemetry
 
