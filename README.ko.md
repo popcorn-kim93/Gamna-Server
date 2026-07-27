@@ -54,7 +54,7 @@ SteamCMD와 게임 서버 파일은 첫 설치 때 자동으로 내려받습니�
 **Windows 첫 실행 시:** GSM은 코드 서명이 되어 있지 않아, 처음 `gsm.exe`를 실행하면 윈도우가 **"Windows의 PC 보호"** SmartScreen 경고를 띄울 수 있습니다. **추가 정보 → 실행**을 누르세요.
 
 실행 전에 파일을 직접 확인하고 싶다면 [VirusTotal](https://www.virustotal.com/gui/home/upload)에 올려 스캔할 수 있습니다.
-v0.5.7 [VirusTotal 검사 결과](https://www.virustotal.com/gui/file/deb9ff9525f3f1684186de68733cf6471e1c1b970b872f2947aa7e50a877abf0)를 확인하세요. 몇몇 엔진이 잡지만, 이는 서명 없는 Go 실행파일에서 흔한 휴리스틱 오탐이며 Microsoft Defender를 비롯한 주요 엔진은 모두 통과합니다.
+v0.5.16 검사 결과: [Windows (gsm.exe)](https://www.virustotal.com/gui/file/921afdc7a27b60214a389c2d517f70276686f6dd4eb20f8e61ebf673c051ca12) · [Linux (gsm)](https://www.virustotal.com/gui/file/571b6c76208b9503d16ac2bd61b5c637385c2334495bb1a81f0dc89a6f98ce9b). 몇몇 엔진이 잡지만, 이는 서명 없는 Go 실행파일에서 흔한 휴리스틱 오탐이며 Microsoft Defender를 비롯한 주요 엔진은 모두 통과합니다.
 
 ## 지원 게임
 
