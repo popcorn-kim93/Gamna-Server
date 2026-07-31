@@ -2,6 +2,18 @@
 
 All notable changes to GSM. 각 버전의 다운로드는 [Releases](../../releases)에서.
 
+## v0.5.17 — 2026-07-31
+
+### Added / 추가
+- **서버 자동 재시작 스케줄.** 인스턴스마다 요일과 시각(여러 개)을 정해두면 그 시각에 서버가 자동으로 재시작됩니다 (설정 반영·장시간 가동으로 쌓인 메모리 정리용). 옵션으로 켤 수 있는 것들: **재시작 전 예고 방송**(문구와 예고 시점 여러 번 지정 가능 — 콘솔/RCON 되는 게임만), **접속자가 있으면 이번 회차 건너뛰기**(인원 조회 되는 게임만), **업데이트가 있으면 재시작할 때 먼저 적용**(정지 → 자동 업데이트 → 시작). 설정 탭 맨 아래에서 지정합니다.
+  - **Scheduled auto-restart.** Set weekdays and times (multiple) per instance and the server restarts automatically at those times (to apply settings, or clear memory after long uptime). Optional toggles: **a warning broadcast before restart** (custom message, several lead times — for games with a console/RCON), **skip this run if players are online** (for games with a player list), and **apply a game update first if one is available** (stop → update → start). Configure it at the bottom of the Settings tab.
+
+### Fixed / 수정
+- **시작·정지·재시작 버튼이 첫 클릭에 반응하지 않던 문제.** 서버 목록이 2초마다 통째로 다시 그려지면서, 버튼을 누른 순간과 뗀 순간 사이에 다시 그려지면 클릭이 무시됐습니다 ("한 번 더 눌러야 되던" 증상). 이제 바뀐 카드만 갱신해 클릭이 항상 먹습니다.
+  - **Start/stop/restart buttons sometimes ignoring the first click.** The server list was fully re-rendered every 2 seconds; if a re-render landed between mouse-down and mouse-up, the click was dropped (the "had to click twice" symptom). Now only changed cards update, so clicks always register.
+- **Project Zomboid(빌드 42) 새 서버의 첫 실행이 멈추던 문제.** 새 좀보이드 서버를 처음 시작하면 어드민 비밀번호 입력 단계에서 무한히 "시작 중"에 머물렀습니다. 이제 GSM이 게임의 입력 프롬프트를 기다렸다가 비밀번호를 넣고(비워두면 안전한 비밀번호를 자동 생성해 설정 탭에 표시), 정상적으로 부팅됩니다.
+  - **Project Zomboid (Build 42) hanging on first run.** Starting a brand-new Zomboid server would hang forever on "Starting" at the admin-password step. GSM now waits for the game's input prompt before sending the password (and, if you leave it blank, generates a secure one that's shown in the Settings tab), so it boots normally.
+
 ## v0.5.16 — 2026-07-26
 
 ### Added / 추가
